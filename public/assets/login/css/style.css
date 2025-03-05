@@ -1,51 +1,129 @@
-/* Container lebih besar dan tetap di tengah */
+/* Container utama */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Tetap layar penuh */
+    height: 100vh;
     width: 100%;
-    max-width: 2000px; /* Lebih besar */
+    max-width: 2000px;
     margin: auto;
-    padding: 80px; /* Padding ditingkatkan */
+    padding: 60px;
 }
 
-/* Pastikan container fleksibel */
+/* Container fleksibel untuk logo dan teks */
 .container-flex {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: 20px; /* Padding tetap */
+    text-align: left;
     width: 100%;
+    padding: 20px;
 }
 
-/* Ukuran logo tetap */
+/* Logo dan teks dalam satu baris */
+.logo-text-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo (diperkecil) */
 .logo {
-    width: 80px; /* Tidak berubah */
+    width: 60px;
     height: auto;
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
-.h4{
-    color: #3D52A0;
-    font-weight: 900;
+/* Teks di sebelah logo */
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-/* Menyesuaikan teks */
-.h6 {
-    color: #333;
+
+/* Login heading */
+.h4 {
+    color: #3D52A0;
     font-weight: 1000;
 }
 
+/* Nama aplikasi */
+.h6 {
+    color: #333;
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+}
+
+/* Deskripsi aplikasi */
 .h7 {
     font-weight: 400;
     color: #6F6F6F;
-    font-size: 0.75rem;
-    margin-bottom: 5px; /* Jarak antar teks lebih sempit */
+    font-size: 0.85rem;
+}
+
+/* Container gambar login */
+.img-container {
+    display: flex;
+    justify-content: center;
+    margin: 80px;
+    align-items: center;
+}
+
+/* Gambar login */
+.bottom-img {
+    width: 296px;
+    height: 296px;
+}
+
+/* Grup input dengan ikon */
+.input-group-custom {
+    position: relative;
+    width: 100%;
+}
+
+/* Input dengan padding lebih besar agar tidak tertimpa ikon */
+.input-group-custom input {
+    padding-left: 55px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease-in-out;
+    font-size: 1rem;
+}
+
+/* Warna border saat fokus */
+.input-group-custom input:focus {
+    border-color: #3D52A0;
+}
+
+/* Placeholder tetap terlihat dengan cukup ruang */
+.input-group-custom input::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+/* Ikon dalam input */
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 10;
+}
+
+/* Sembunyikan ikon saat input memiliki teks atau fokus */
+.input-group-custom input:valid+.input-icon,
+.input-group-custom input:focus+.input-icon {
+    opacity: 0;
 }
 
 /* Responsif */
 @media (max-width: 768px) {
-    .container {
+    .container-flex {
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -53,11 +131,21 @@
     }
 
     .logo {
+        width: 50px;
         margin-right: 0;
         margin-bottom: 10px;
     }
 
-    .text {
-        max-width: 100%;
+    .h6 {
+        font-size: 1rem;
+    }
+
+    .h7 {
+        font-size: 0.75rem;
+    }
+
+    .bottom-img {
+        width: 220px;
+        height: 220px;
     }
 }
