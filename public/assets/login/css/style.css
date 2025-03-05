@@ -1,0 +1,63 @@
+/* Container lebih besar dan tetap di tengah */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Tetap layar penuh */
+    width: 100%;
+    max-width: 2000px; /* Lebih besar */
+    margin: auto;
+    padding: 80px; /* Padding ditingkatkan */
+}
+
+/* Pastikan container fleksibel */
+.container-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px; /* Padding tetap */
+    width: 100%;
+}
+
+/* Ukuran logo tetap */
+.logo {
+    width: 80px; /* Tidak berubah */
+    height: auto;
+    margin-right: 15px;
+}
+
+.h4{
+    color: #3D52A0;
+    font-weight: 900;
+}
+/* Menyesuaikan teks */
+.h6 {
+    color: #333;
+    font-weight: 1000;
+}
+
+.h7 {
+    font-weight: 400;
+    color: #6F6F6F;
+    font-size: 0.75rem;
+    margin-bottom: 5px; /* Jarak antar teks lebih sempit */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .text {
+        max-width: 100%;
+    }
+}

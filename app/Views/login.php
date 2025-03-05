@@ -23,6 +23,7 @@
 
   <!-- Custom styles for this template-->
   <link href="assets/login/css/sb-admin-2.min.css" rel="stylesheet" />
+  <link href="assets/login/css/style.css" rel="stylesheet" />
 </head>
 
 <body class="bg-gradient-primary">
@@ -34,20 +35,29 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6 d-none d-lg-block bg-login-image">
+                <div class="container-flex">
+                  <img src="assets/img/logo.png" alt="Logo Aplikasi" class="logo">
+                  <div class="text">
+                    <h1 class="h6">akudihatinya</h1>
+                    <h1 class="h7">Aplikasi Kesehatan untuk Diabetes Mellitus</h1>
+                    <h1 class="h7">dan Hipertensi Terlayani</h1>
+                  </div>
+                </div>
+              </div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Login</h1>
+                    <h1 class="h4 mb-4">Login</h1>
                   </div>
                   <form class="user">
                     <div class="form-group">
                       <input
-                        type="email"
+                        type="username"
                         class="form-control form-control-user"
-                        id="exampleInputEmail"
-                        aria-describedby="emailHelp"
-                        placeholder="Enter Email Address..." />
+                        id="usernameInput"
+                        aria-describedby="usernameHelp"
+                        placeholder="Username" />
                     </div>
                     <div class="form-group">
                       <input
