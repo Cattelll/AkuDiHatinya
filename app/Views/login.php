@@ -51,6 +51,7 @@
                     <h1 class="h4 mb-4">Login</h1>
                   </div>
                   <form class="user">
+
                     <div class="form-group input-group-custom">
                       <input type="text" class="form-control form-control-user" id="usernameInput" placeholder="Username" required />
                       <img src="assets/login/img/username.png" class="input-icon" alt="User Icon">
