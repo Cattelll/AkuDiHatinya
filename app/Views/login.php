@@ -4,26 +4,19 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
 
   <title>Login</title>
 
   <!-- Custom fonts for this template-->
-  <link
-    href="assets/login/vendor/fontawesome-free/css/all.min.css"
-    rel="stylesheet"
-    type="text/css" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet" />
+  <link href="<?= base_url('assets/login/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
   <!-- Custom styles for this template-->
-  <link href="assets/login/css/sb-admin-2.min.css" rel="stylesheet" />
-  <link href="assets/login/css/style.css" rel="stylesheet" />
+  <link href="<?= base_url('assets/login/css/sb-admin-2.min.css') ?>" rel="stylesheet" />
+  <link href="<?= base_url('assets/login/css/style.css') ?>" rel="stylesheet" />
 </head>
 
 <body class="bg-gradient-primary">
@@ -42,7 +35,7 @@
               <div class="col-lg-6 d-none d-lg-block bg-login-image">
                 <div class="container-flex">
                   <div class="logo-text-wrapper">
-                    <img src="assets/login/img/logo.png" alt="Logo Aplikasi" class="logo">
+                    <img src="<?= base_url('assets/login/img/logo.png') ?>" alt="Logo Aplikasi" class="logo">
                     <div class="text">
                       <h1 class="h6">akudihatinya</h1>
                       <h1 class="h7">Aplikasi Kesehatan untuk Diabetes Mellitus dan Hipertensi Terlayani</h1>
@@ -50,7 +43,7 @@
                   </div>
                 </div>
                 <div class="img-container">
-                  <img src="assets/login/img/login.webp" alt="Gambar Login" class="bottom-img">
+                  <img src="<?= base_url('assets/login/img/login.webp') ?>" alt="Gambar Login" class="bottom-img">
                 </div>
               </div>
 
@@ -60,12 +53,22 @@
                   <div class="text-center">
                     <h1 class="h4 mb-4">Login</h1>
                   </div>
-                  <form class="user">
+
+                  <!-- Notifikasi Error -->
+                  <?php if (session()->getFlashdata('error')) : ?>
+                    <div class="alert alert-danger">
+                      <?= session()->getFlashdata('error'); ?>
+                    </div>
+                  <?php endif; ?>
+
+                  <!-- Form Login -->
+                  <form class="user" action="<?= base_url('login') ?>" method="post">
+                    <?= csrf_field(); ?>
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="usernameInput" placeholder="Username" />
+                      <input type="text" class="form-control form-control-user" name="username" placeholder="Username" required />
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" />
+                      <input type="password" class="form-control form-control-user" name="password" placeholder="Password" required />
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
@@ -73,8 +76,13 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">Login</a>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
                   </form>
+                  <hr>
+                  <div class="text-center">
+                    <a class="small" href="#">Lupa Password?</a>
+                  </div>
+
                 </div>
               </div>
 
@@ -86,14 +94,14 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="assets/login/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/login/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?= base_url('assets/login/vendor/jquery/jquery.min.js') ?>"></script>
+  <script src="<?= base_url('assets/login/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="assets/login/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="<?= base_url('assets/login/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="assets/login/js/sb-admin-2.min.js"></script>
+  <script src="<?= base_url('assets/login/js/sb-admin-2.min.js') ?>"></script>
 </body>
 
 </html>
